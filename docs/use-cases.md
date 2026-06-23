@@ -19,13 +19,13 @@ comme visiteur consulte liste des article et filtre sa recherche
 
 UTILISATEUR
 
-inscription avec nom prenom et mot de passe 
+inscription avec nom prenom et mot de passe // email
 
 se connecte ou se deconnecter pour acceder a compte
 
 post de commentaire sur un article modfiable ou supprimable
 
-comme visiteur consulte liste des article et filtre sa recherche
+comme visiteur consulte liste des articles et filtre sa recherche
 
 VISITEUR
 
