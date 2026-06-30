@@ -8,6 +8,9 @@ use Illuminate\View\View;
 
 class ArticleController extends Controller
 {
+    public function show(): view {
+        return view('articles-list');
+    }
     //
     public function index(): view {
         
