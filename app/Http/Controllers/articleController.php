@@ -8,7 +8,7 @@ use Illuminate\View\View;
 
 class ArticleController extends Controller
 {
-    //
+    //function qui affiche les articles dans vue
     public function index(): view {
         
         $articles = Article::all();

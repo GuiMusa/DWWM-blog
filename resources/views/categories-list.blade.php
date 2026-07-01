@@ -7,12 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    {{-- liste des article --}}
+    {{-- liste des category --}}
     <h1>Articles list</h1>
-    @foreach ($articles as $article)
+    @foreach ($categories as $category)
     <div>
-        <h2>{{ $article->title }}</h2>
-        <p>{{$article->content}}</p>
+        <h2>{{ $category->name }}</h2>
     </div>
     @endforeach
 
