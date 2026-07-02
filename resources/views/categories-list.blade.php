@@ -8,7 +8,7 @@
 </head>
 <body>
     {{-- liste des category --}}
-    <h1>Articles list</h1>
+    <h1>Catégorie list</h1>
     @foreach ($categories as $category)
     <div>
         <h2>{{ $category->name }}</h2>
