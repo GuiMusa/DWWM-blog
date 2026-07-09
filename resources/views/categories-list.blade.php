@@ -12,6 +12,7 @@
     @foreach ($categories as $category)
     <div>
         <h2>{{ $category->name }}</h2>
+        <p>{{$category->articles->title}}</p>
     </div>
     @endforeach
 
