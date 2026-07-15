@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Articles list</h1>
-    @foreach ($articles as $article)
-    <div>
-        <h2>{{ $article->title }}</h2>
-        <p>{{$article->content}}</p>
-        <p>{{$article->user->name}}</p>
-        <p>{{$article->category->name}}</p>
-    </div>
-    @endforeach
+@extends('layouts.app')
 
-    
+@section('title','Article')
+
+@section('content')
+ 
+    <h1>Articles list</h1>
+        @foreach ($articles as $article)
+            <x-article :article="$article" :category="$article"/>
+        @endforeach
+
+@endsection
+
 </body>
 </html>

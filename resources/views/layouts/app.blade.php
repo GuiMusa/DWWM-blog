@@ -1,3 +1,15 @@
-<div>
-    <!-- Act only according to that maxim whereby you can, at the same time, will that it should become a universal law. - Immanuel Kant -->
-</div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>@yield('title', 'Mon site')</title>
+    {{-- @vite('resources/css/app.css') --}}
+</head>
+<body>
+    @include('layouts.header')
+
+    <main class="p-4">
+        @yield('content')
+    </main>
+</body>
+</html>
