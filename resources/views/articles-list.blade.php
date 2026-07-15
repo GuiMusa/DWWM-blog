@@ -11,5 +11,8 @@
                 <a href="{{route('article.details', $article->id)}}">voir plus</a>
             </div>
         @endforeach
+        <div>
+         {{ $articles->links() }}
+        </div>
 
 @endsection
