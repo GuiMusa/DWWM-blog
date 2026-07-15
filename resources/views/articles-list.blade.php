@@ -11,7 +11,7 @@
                 <a href="{{route('article.details', $article->id)}}">voir plus</a>
             </div>
         @endforeach
-        <div>
+        <div class="mt-8 flex">
          {{ $articles->links() }}
         </div>
 
