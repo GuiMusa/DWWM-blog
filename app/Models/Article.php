@@ -9,6 +9,7 @@ class Article extends Model
 {
     //
     protected $tables = 'articles';
+    protected $fillable = ['title', 'slug', 'content', 'status', 'published_at','user_id', 'category_id'];
 
     public function category(): BelongsTo {
         return $this->belongsTo(Category::class);

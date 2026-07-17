@@ -8,9 +8,10 @@
     {{-- En-tête --}}
     <div class="flex items-center justify-between mb-6">
         <h1 class="text-2xl font-semibold text-gray-900">Articles</h1>
-        <button class="bg-black text-white text-sm font-medium px-4 py-2 rounded-md hover:bg-gray-800 transition">
+            <a href="{{ route('admin.articles.create') }}"
+            class="bg-black text-white text-sm font-medium px-4 py-2 rounded-md hover:bg-gray-800 transition">
             + Nouvel article
-        </button>
+            </a>
     </div>
 
     {{-- Tableau --}}

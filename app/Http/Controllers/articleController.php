@@ -55,7 +55,7 @@ public function store(Request $request) {
     ]);
 
     $validated['slug'] = Str::slug($validated['title']);
-    $validated['user_id'] = auth()->id();
+    $validated['user_id'] = 1;
 
     if ($validated['status'] === 'published') {
         $validated['published_at'] = now();
