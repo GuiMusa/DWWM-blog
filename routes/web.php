@@ -17,3 +17,5 @@ Route::get('/admin/articles', [ArticleController::class, 'adminIndex'])->name('a
 
 Route::get('/admin/articles/create', [ArticleController::class, 'create'])->name('admin.articles.create');
 Route::post('/admin/articles', [ArticleController::class, 'store'])->name('admin.articles.store');
+
+Route::delete('/admin/articles/{id}', [ArticleController::class, 'destroy'])->name('admin.articles.destroy');

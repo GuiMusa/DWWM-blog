@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 
 class ArticleController extends Controller
 {
-    //
+    //liste darticle
     public function index(): view {
         
         $articles = Article::with('category')
@@ -21,6 +21,7 @@ class ArticleController extends Controller
         return view('articles-list', ['articles' => $articles]);
     }
 
+    //detail article
     public function show(int $id): view {
         $article = Article::with(['category'])->findOrFail($id);
         return view('article-details', compact('article'));
@@ -36,15 +37,19 @@ class ArticleController extends Controller
         return view('admin.articles-list-admin', ['articles' => $articles]);
     }
 
+    //info d'article
     public function adminShow(int $id): view {
         $article = Article::with(['category'])->findOrFail($id);
         return view('article-details', compact('article'));
     }
+
+    //page creation d'article
 public function create(): view {
     $categories = Category::all();
     return view('admin.articles-create-admin', compact('categories'));
 }
 
+//creer larticle
 public function store(Request $request) {
 
     $validated = $request->validate([
@@ -61,9 +66,19 @@ public function store(Request $request) {
         $validated['published_at'] = now();
     }
 
+    //validation de creation
     Article::create($validated);
 
     return redirect()->route('admin.articles.index')->with('success', 'Article créé avec succès.');
+}
+
+//supprimer l'article
+public function destroy(int $id) {
+
+    $article = Article::findOrFail($id);
+    $article->delete();
+
+    return redirect()->route('admin.articles.index')->with('success', 'Article supprimé avec succès.');
 }
 }
 
