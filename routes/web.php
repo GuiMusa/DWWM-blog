@@ -24,3 +24,6 @@ Route::delete('/admin/articles/{id}', [ArticleController::class, 'destroy'])->na
 //route des category
 
 Route::get('/categories', [CategoryController::class, 'index']);
+
+Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
+Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
