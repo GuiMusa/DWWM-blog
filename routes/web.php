@@ -8,7 +8,8 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/categories', [CategoryController::class, 'index']);
+//route des articles
+
 Route::get('/articles', [ArticleController::class, 'index']);
 
 Route::get('/articles/{id}', [ArticleController::class, 'show'])->name('article.details');
@@ -19,3 +20,7 @@ Route::get('/admin/articles/create', [ArticleController::class, 'create'])->name
 Route::post('/admin/articles', [ArticleController::class, 'store'])->name('admin.articles.store');
 
 Route::delete('/admin/articles/{id}', [ArticleController::class, 'destroy'])->name('admin.articles.destroy');
+
+//route des category
+
+Route::get('/categories', [CategoryController::class, 'index']);

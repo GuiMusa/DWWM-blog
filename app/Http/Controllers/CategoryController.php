@@ -8,10 +8,10 @@ use Illuminate\View\View;
 
 class CategoryController extends Controller
 {
-    //function qui affiche les category dans vue
+    //function qui affiche les category dans vue 
     public function index(): view{
 
-    $categories = Category::all();
+    $categories = Category::withCount('articles')->get();
 
     return view('categories-list', ['categories' => $categories]);
     }

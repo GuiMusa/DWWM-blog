@@ -10,8 +10,9 @@
     {{-- liste des category --}}
     <h1>Catégorie list</h1>
     @foreach ($categories as $category)
-    <div>
-        
+    <div class="px-6 py-4 text-gray-600">
+        {{ $category->name ?? '—' }}
+        {{ $category->articles_count }}
     </div>
     @endforeach
 
