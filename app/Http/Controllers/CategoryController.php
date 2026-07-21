@@ -38,6 +38,32 @@ public function store(Request $request)
     return redirect()->route('categories.index')->with('success', 'Catégorie créée avec succès');
 }
 
+// affiche le formulaire pré-rempli
+public function edit(Category $category): view
+{
+    return view('categories-edit', ['category' => $category]);
+}
 
+// met à jour la category
+public function update(Request $request, Category $category)
+{
+    $validated = $request->validate([
+        'name' => 'required|string|max:50',
+    ]);
+
+    $category->update([
+        'name' => $validated['name'],
+        'slug' => Str::slug($validated['name']),
+    ]);
+
+    return redirect()->route('categories.index')->with('success', 'Catégorie modifiée avec succès');
+}
+
+public function destroy(Category $category)
+{
+    $category->delete();
+
+    return redirect()->route('categories.index')->with('success', 'Catégorie supprimée avec succès');
+}
 
 }
