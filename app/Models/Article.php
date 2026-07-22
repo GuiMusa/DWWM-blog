@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Article extends Model
 {
     //
-    protected $tables = 'articles';
+    protected $table = 'articles';
     protected $fillable = ['title', 'slug', 'content', 'status', 'published_at','user_id', 'category_id'];
 
     public function category(): BelongsTo {
